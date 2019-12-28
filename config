@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "saad"]
+	url = https://github.com/saad999/trial.git
+	fetch = +refs/heads/*:refs/remotes/saad/*
