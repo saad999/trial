@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" media="screen" />
+<title>Kasper Link Designed By Karam</title>
+<script src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".close").click(function () {
+        $('.popup').slideUp(500);
+        $('.overlay').fadeOut(500);
+    });
+    return false
+});
+</script>
+
+ <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+			</div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+  <![endif]-->
+  
+  <link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+
+<script type="text/javascript">
+    var persistclose=0 //set to 0 or 1. 1 means once the bar is manually closed, it will remain closed for browser session
+    var startX = 30 //set x offset of bar in pixels
+    var startY = 4 //set y offset of bar in pixels
+    var verticalpos="fromtop" //enter "fromtop" or "frombottom"
+    function iecompattest(){
+    return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+    }
+    function get_cookie(Name) {
+    var search = Name + "="
+    var returnvalue = "";
+    if (document.cookie.length > 0) {
+    offset = document.cookie.indexOf(search)
+    if (offset != -1) {
+    offset += search.length
+    end = document.cookie.indexOf(";", offset);
+    if (end == -1) end = document.cookie.length;
+    returnvalue=unescape(document.cookie.substring(offset, end))
+    }
+    }
+    return returnvalue;
+    }
+    function closebar(){
+    if (persistclose)
+    document.cookie="remainclosed=1"
+    document.getElementById("topbar").style.visibility="hidden"
+    }
+    function staticbar(){
+    barheight=document.getElementById("topbar").offsetHeight
+    var ns = (navigator.appName.indexOf("Netscape") != -1) || window.opera;
+    var d = document;
+    function ml(id){
+    var el=d.getElementById(id);
+    if (!persistclose || persistclose && get_cookie("remainclosed")=="")
+    el.style.visibility="visible"
+    if(d.layers)el.style=el;
+    el.sP=function(x,y){this.style.left=x+"px";this.style.top=y+"px";};
+    el.x = startX;
+    if (verticalpos=="fromtop")
+    el.y = startY;
+    else{
+    el.y = ns ? pageYOffset + innerHeight : iecompattest().scrollTop + iecompattest().clientHeight;
+    el.y -= startY;
+    }
+    return el;
+    }
+    window.stayTopLeft=function(){
+    if (verticalpos=="fromtop"){
+    var pY = ns ? pageYOffset : iecompattest().scrollTop;
+    ftlObj.y += (pY + startY - ftlObj.y)/8;
+    }
+    else{
+    var pY = ns ? pageYOffset + innerHeight - barheight: iecompattest().scrollTop + iecompattest().clientHeight - barheight;
+    ftlObj.y += (pY - startY - ftlObj.y)/8;
+    }
+    ftlObj.sP(ftlObj.x, ftlObj.y);
+    setTimeout("stayTopLeft()", 10);
+    }
+    ftlObj = ml("topbar");
+    stayTopLeft();
+    }
+    if (window.addEventListener)
+    window.addEventListener("load", staticbar, false)
+    else if (window.attachEvent)
+    window.attachEvent("onload", staticbar)
+    else if (document.getElementById)
+    window.onload=staticbar
+</script> 
+
+
+
+</head>
+<body>
+
+
+
+<div id="top-header-bg">
+<div id="top-header" style="width: 1004px; height: 39px">
+<ul>
+<li><a href="login.html"><font face="PT Bold Broken" color="#800080">الرئيسيـــــــــة</font></a></li>
+<li><a href="about.html"><font face="PT Bold Dusky" color="#008000">عن الشبـــــكة</font></a></li>
+<li><a href="notifications.html"><font face="PT Bold Dusky" color="#0000FF">التنبيهـــــات</font></a></li>
+<li><a href="contact.html"><font color="#000080">ا</font><font color="#000080" face="PT Bold Dusky">لتــــــواصل</font></a></li>
+<li><a href="index.html"><font face="PT Bold Dusky" color="#808000">الــــــدردشة</font></a></li>
+</ul>
+<div id="top-header-date">
+<div id="clock">Loading...</div>  <script type="text/javascript">  function refrClock()  {  var d=new Date();  var s=d.getSeconds();  var m=d.getMinutes();  var h=d.getHours();  var day=d.getDay();  var date=d.getDate();  var month=d.getMonth();  var year=d.getFullYear();  var days=new Array("الاحد","الاثنين","الثلاثاء","الاربعاء","الخميس","الجمعة","السبت");  var months=new Array("يناير","فبراير","مارس","ابريل","ماي","يونيو","يوليو","اغسطس","سبتمبر","اكتوبر","نوفمبر","ديسمبر");  var am_pm;  if (s<10) {s="0" + s}  if (m<10) {m="0" + m}  if (h>12) {h-=12;am_pm = "مساءً."}  else {am_pm="صباحاً."}  if (h<10) {h="0" + h}  document.getElementById("clock").innerHTML=days[day] + " " + date + " من " + months[month] + " " + year + "   |   الساعة الان " + h + ":" + m + ":" + s + " " + am_pm;  setTimeout("refrClock()",1000);  }  refrClock();</script>
+</div><!-- end top-header-date -->
+</div></div>
+<div id="header" style="width: 993px; height: 225px">
+
+<div id="login" style="width: 496px; height: 183px">
+<form name="login" action="http://www.KasperLink.org/login" method="post"  onSubmit="return doLogin()" >
+<input type="text" name="username" class="name" value="">
+<input type="password" name="password" class="pass" placeholder="كلمة المرور">
+<font color="#008000"><b><font size="4">&nbsp;<span lang="ar-eg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></b></font><span lang="ar-eg"><font size="4">
+<b><font color="#FF00FF" face="Times New Roman">
+<span style="background-color: #00FFFF">اسم المستخدم</span></font><font color="#008000" face="Traditional Arabic">
+</font> </b>
+<font face="Traditional Arabic">&nbsp;</font>&nbsp; </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="4">
+</font>
+<span style="background-color: #00FFFF; font-weight:700">
+<font face="Times New Roman" size="4" color="#FF00FF">كلمة المرور</font></span><b><font color="#008000" face="Traditional Arabic" size="4"> </font>
+</b></span><font color="#008000">
+<span style="background-color: #00FF00">
+<input class="button" name="commit" type="submit" value="تسجيل الدخول" /></span></font><p>
+<font color="#008080">&nbsp;&nbsp;&nbsp;
+</font><font color="#008080" size="2">
+</font><font color="#008080"> </font> </p>
+<p>&nbsp;&nbsp;&nbsp; <font color="#008000">&nbsp;&nbsp;</font><b><font face="Traditional Arabic" size="4"><font color="#800000">الرجاء</font><font color="#008000"> 
+</font> 
+<font face="Traditional Arabic">الإنتباه</font> 
+</font>
+<font color="#0000FF" face="Traditional Arabic" size="4">لرسائل</font><font color="#0000FF" size="4"> </font>
+<font color="#800080" size="4" face="Traditional Arabic">الخطأ</font><font color="#008000" face="Traditional Arabic" size="4"> 
+التي تظهر </font>
+<font color="#0000FF" size="4" face="Traditional Arabic"> 
+هنا</font></b><font size="4"> 
+....&nbsp; </font> <font size="4" color="#0000FF">؟</font></p>
+<p>&nbsp;</p>
+<div class="tex" style="width: 471px; height: 39px">
+	<b>
+	<span style="background-color: #C0C0C0">
+	<font size="4" color="#800080" face="PT Bold Dusky">منطقة</font><font size="4" color="#008000" face="PT Bold Dusky">&nbsp;&nbsp; 
+	</font><font size="4" color="#800080" face="PT Bold Dusky">ت</font><font size="4"><font color="#000080" face="PT Bold Dusky">س</font><font color="#FF0000" face="PT Bold Dusky">ج</font><font color="#0000FF" face="PT Bold Dusky">ي</font></font><font size="4" color="#FFFF00" face="PT Bold Dusky">ل</font><font size="4" color="#0000FF" face="PT Bold Dusky">
+	</font><font size="4" color="#008000" face="PT Bold Dusky">&nbsp; </font>
+	<font size="4">
+	<font color="#800000" face="PT Bold Dusky">
+	ا</font><font color="#008000" face="PT Bold Dusky">لدخ</font><font color="#800080" face="PT Bold Dusky">ـــــ</font><font color="#000080" face="PT Bold Dusky">ـــــ</font><font color="#FFFF00" face="PT Bold Dusky">ـــــ</font><font color="#00FFFF" face="PT Bold Dusky">ـــــ</font><font color="#00FF00" face="PT Bold Dusky">ــ<span lang="ar-eg">ـــــــ</span>ـــ</font><font color="#FF0000" face="PT Bold Dusky">ـــــ</font><font face="PT Bold Dusky">ـ</font></font><font size="4" color="#008000" face="PT Bold Dusky">ول</font></span></b></div>
+</form>
+</div> 
+<font size="6" face="Andalus" color="#003399">&nbsp;
+<img border="0" src="paper.gif" width="474" height="187"></font><p>
+<font face="Andalus" size="6" color="#003399">&nbsp;&nbsp; &nbsp;
+</font>&nbsp; &nbsp; <font size="6" face="Andalus" color="#003399">&nbsp;&nbsp; &nbsp;</font>&nbsp;  
+<font size="6" face="Andalus" color="#003399">&nbsp;&nbsp; </font>
+<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;<p>
+&nbsp;</div>
+<div id="content" style="width: 1000px; height: 597px">
+&nbsp;<p> <span lang="ar-eg">*&nbsp; </span><font color="#008000">&nbsp;</font><span lang="ar-eg"><font color="#008000"><b><font face="Akhbar MT" size="3">السادة 
+العملاء الكرام</font></b></font>&nbsp;</span><b><font face="Traditional Arabic" size="4" color="#FF0000">&quot;
+</font> <u>  
+<span style="background-color: #C0C0C0"> 
+<font size="2" color="#0000FF" face="PT Bold Heading">ملحوظة</font></span><span style="background-color: #C0C0C0" lang="ar-eg"><font color="#0000FF" size="2"> </font> 
+<font size="2" color="#0000FF" face="PT Bold Heading">هامه</font></span></u></b><span lang="ar-eg"> 
+</span><b><font face="Traditional Arabic" size="4" color="#FF0000">&quot;</font></b><span lang="ar-eg">:<font color="#000000"> </font> <b>
+<font face="Traditional Arabic" size="4" color="#000000">يتم تسديد</font></b></span><b><font face="Traditional Arabic" size="4" color="#000000"> </font>
+<span lang="ar-eg"><font face="Traditional Arabic" size="4" color="#000000">
+الإشتراك من يوم</font><font face="Traditional Arabic" size="4" color="#000099"> </font>
+<span style="background-color: #C0C0C0">
+<font face="Traditional Arabic" size="4" color="#FF0000">1</font></span><span style="background-color: #00FF00"><font face="Traditional Arabic" size="4" color="#000000"> 
+إلي يوم </font></span>
+<span style="background-color: #C0C0C0">
+<font face="Traditional Arabic" size="4" color="#FF0000">3</font></span><font face="Traditional Arabic" size="4" color="#000099"> 
+</font>
+<font face="Traditional Arabic" size="4" color="#000000"> 
+من بداية كل شهر</font><font face="Traditional Arabic" size="4" color="#000099">&nbsp;، </font>
+<font face="Traditional Arabic" size="4" color="#800080"> 
+وفي حالة التأخر يتم</font><font face="Traditional Arabic" size="4" color="#008080"> 
+</font>
+<font face="Traditional Arabic" size="4" color="#000000"> 
+<span style="background-color: #00FF00">فصل</span></font><font face="Traditional Arabic" size="4" color="#008080"> 
+</font>
+<font face="Traditional Arabic" size="4" color="#800080"> 
+الخدمة تلقائيا</font><font face="Traditional Arabic" size="4" color="#008080">َ</font><font face="Traditional Arabic" size="4" color="#000099">&nbsp;، </font>
+<font face="Traditional Arabic" size="4" color="#0000FF"> 
+ولن &nbsp;يتم تشغيل&nbsp; 
+الخدمة إلا</font><font face="Traditional Arabic" size="4" color="#800000"> 
+</font>
+<font face="Traditional Arabic" size="4" color="#000000"> 
+<span style="background-color: #00FF00">بتسديد</span></font></span><font face="Traditional Arabic" size="4" color="#0000FF"> </font>
+<span lang="ar-eg"><font face="Traditional Arabic" size="4" color="#0000FF">
+الإشتراك</font><font face="Traditional Arabic" size="4" color="#000099">
+.</font></span></b></p>
+<p><b><font face="Traditional Arabic" size="3" color="#000000">&nbsp;
+</font></b><b style="border: 0 none; margin: 0; padding: 0"><font size="2">*</font></b><b><font face="Traditional Arabic" size="5" color="#FF0000"> &quot; </font>
+<span style="background-color: #C0C0C0">
+<font face="Traditional Arabic" size="5" color="#0000FF"> <u>تنبيه</u></font></span><font face="Traditional Arabic" size="5" color="#FF0000">&quot;</font><font face="Traditional Arabic" size="3" color="#000000"> 
+</font><font face="Traditional Arabic" size="4" color="#FF00FF">عدم طلب تشغيل الخدمة بدون تسديد ا<span lang="ar-eg">لإ</span>شتراك و حتي إن تم تجاهل هذا البند من بعض 
+العملاء لن يتم تشغيل الخدمة الإ بعد السداد</font><font face="Traditional Arabic" size="3" color="#800000"> </font><font face="Traditional Arabic" size="3" color="#000000">.</font></b></p>
+<p>&nbsp;&nbsp;<b><font size="2"> * <font color="#6600FF">&nbsp;</font></font><font face="Traditional Arabic" size="4" color="#800000">يتم 
+فصل الخدمة يومياَ من نصف ساعة إلى ساعة كاملة لنقوم براحة الأجهزة بسبب إرتفاع درجة 
+الحرارة المستمرة</font><font size="4" color="#800000">&nbsp;</font><font size="4" color="#008080"> </font></b>
+<font color="#008080">. </font> </p>
+<p><font color="#008080">&nbsp; <span lang="ar-eg">&nbsp;*&nbsp;&nbsp; </span></font><b><u>
+<span style="background-color: #00FFFF"><font size="2" color="#0000FF">ملحوظة </font> </span> 
+<font size="2" color="#0000FF">
+<span style="background-color: #00FFFF">هامة</span></font></u></b><span lang="ar-eg"><font color="#008080">&nbsp;&nbsp;
+</font></span><b><font face="Traditional Arabic" size="4" color="#008080">الرجاء 
+من المشتركين <span lang="ar-eg">متابعة صفحة </span>&nbsp;التنبيهات</font><font face="Traditional Arabic" size="4" color="#FF0000"> </font>
+<font face="Traditional Arabic" size="4">(</font><font face="Traditional Arabic" size="4" color="#FF0000"> الدخول <span lang="ar-eg">إ</span>لي
+<span lang="ar-eg">أ</span>يقونة </font>
+<span style="background-color: #00FF00">
+<font face="Traditional Arabic" size="5" color="#000000">ا</font><font face="Traditional Arabic" size="4" color="#000000">لتنبيهات</font></span><font face="Traditional Arabic" size="4" color="#FF0000"> </font>
+<font face="Traditional Arabic" size="4"> )</font><font face="Traditional Arabic" size="4" color="#FF0000"> في الأعلي من حين <span lang="ar-eg">&nbsp;</span>لآخر 
+حيث يتم وضع أهم التنبيهات للسادة العملاء والتي لا يمكن إغفالها </font><font face="Traditional Arabic" size="4" color="#000099">.</font></b></p>
+<p>&nbsp;</p>
+<center>
+<table summary="2007 Major IT Companies' Profit" id="rounded-corner">
+    <thead>
+    	<tr>
+            <th class="rounded-company" scope="col"><font color="#0000FF">سرعة الخط</font></th>
+            <th class="rounded" scope="col"><font color="#0000FF">سرعة نقل البيانات</font></th>
+            <th class="rounded-q4" scope="col"><font color="#0000FF">الإشتراك الشهري</font></th>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+            <td class="plan-1" height="24"><font color="#FF00FF">512 K.B</font></td>
+            <td class="plan-1" height="24"><font color="#FF00FF">70 / 60 / 50</font></td>
+            <td class="plan-1" height="24"><font color="#FF00FF">70 L.E</font></td>
+        </tr>
+        
+    	<tr>
+            <td class="plan-2"><font color="#000000">1 M.B</font></td>
+            <td class="plan-2"><font color="#000000">120 / 100 / 90</font></td>
+            <td class="plan-2"><font color="#000000">140 L.E</font></td>
+        </tr> 
+        
+    	<tr>
+            <td class="plan-3"><font color="#800000">2 M.B</font></td>
+            <td class="plan-3"><font color="#800000">200 / 180 / 160</font></td>
+            <td class="plan-3"><font color="#800000">220 L.E</font></td>
+        </tr>
+        
+    	<tr>
+            <td class="plan-4"><font color="#00FF00">4 M.B</font></td>
+            <td class="plan-4"><font color="#00FF00">320 / 300 / 270</font></td>
+            <td class="plan-4"><font color="#00FF00">450 L.E</font></td>
+        </tr>    
+        
+    </tbody>
+</table>
+<div class="warning_box"><font color="#800080">السادة العملاء الكرام
+يرجي الإتصال على الرقم المخصص للشبكة لمعرفة كيفية تسديد الإشتراك
+ليس للشبكة أى تعامل مع أي شخص غير المسؤول عنها فقط&nbsp; .</font></div>
+     <div class="valid_box"><font color="#0000FF">الرقم الموحد لجميع الساده العملاء هو</font> :&nbsp;<span lang="ar-eg"><font face="Traditional Arabic" size="3" color="#800000">01092141384</font></span> 
+		: <font color="#003399">01003988190</font></div>
+     <div class="error_box"><font color="#FF0000">مواعيد العمل تبدأ من الساعة 
+		<span style="background-color: #00FF00"> 
+		10</span><span style="background-color: #C0C0C0"> 
+		صباحاَ</span> إلى الساعة <span style="background-color: #00FF00">12
+		</span><span style="background-color: #C0C0C0">ظهرا</span>َ ، ومن الساعه&nbsp;
+		<span style="background-color: #00FF00">10</span><span style="background-color: #C0C0C0">مساءَ</span> إلي الساعه
+		<span style="background-color: #00FF00">12</span><span style="background-color: #C0C0C0"> 
+		ليلا&nbsp;</span> . ولن يتم الرد على أى مكالمات أو حل أى مشكلة في غير هذه الأوقات 
+		. </font> </div>
+</center>
+<p>
+<br />
+</div><!-- end content -->
+<div id="footer">
+  <p>
+	<font color="#FF0000">&nbsp; </font> <font color="#FF0000" size="2">&nbsp;<img border="0" src="images/tv/DESI.png" width="914" height="52"></font></p>
+	</div>
+
+
+    <p align="left"> </p>
+    <form name="sendin" action="http://www.KasperLink.org/login" method="post">
+      <font color="#FFFFFF">
+      <input type="hidden" name="username" style="font-size: 14px; border: 1px solid #BBBBBB; margin: 1px; padding: 2px; background-color: #FDFBFB">
+      <input type="hidden" name="password" style="font-size: 14px; border: 1px solid #BBBBBB; margin: 1px; padding: 2px; background-color: #FDFBFB">
+      <input type="hidden" name="dst" value="http://go.microsoft.com/fwlink/?LinkId=129793" style="font-size: 14px; border: 1px solid #BBBBBB; margin: 1px; padding: 2px; background-color: #FDFBFB">
+      <input type="hidden" name="popup" value="true" style="font-size: 14px; border: 1px solid #BBBBBB; margin: 1px; padding: 2px; background-color: #FDFBFB">
+      </font>
+    </form>
+<script type="text/javascript" src="/md5.js"></script>
+<script type="text/javascript">
+    <!--
+        function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('\023' + document.login.password.value + '\337\232\301\151\220\243\311\353\102\122\061\117\320\301\216\366');
+        document.sendin.submit();
+        return false;
+        }
+    //-->
+    </script>
+<p align="left"> </p></td>
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+	<p align="center">
+	<audio autoplay="autoplay" align="center" preload="auto" loop="loop" controls="controls">
+الرجاء ترقيه المتصفح لديك ان لم يظهر الصوت 
+<source src="114.mp3" type='audio/mp3' />
+</audio>
+
