@@ -6,5 +6,4 @@
 	symlinks = false
 	ignorecase = true
 [remote "saad"]
-	url = https://github.com/saad999/trial.git
-	fetch = +refs/heads/*:refs/remotes/saad/*
+	
